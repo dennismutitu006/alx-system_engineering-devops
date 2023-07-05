@@ -1,2 +1,2 @@
 #!/bin/bash
-cd 
+pushd "$OLDPWD" > /dev/null
