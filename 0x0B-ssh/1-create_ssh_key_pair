@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
-#declare name and passphrase
-KEY_NAME="school"
-PASSPHRASE="betty"
+#!/bin/bash
+# This script creates an RSA key pair with the name school and the passphrase betty
+# The key size is 4096 bits
+
+# Generate the private key and encrypt it with the passphrase
+ssh-keygen -t rsa -b 4096 -f school -N betty
+
+# Generate the public key from the private key
+ssh-keygen -y -f school -P betty > school.pub
 
 #Generate the rsa key pair(PRIVATE KEY)
-ssh-keygen -t rsa -b 4096 -N "$PASSPHRASE" -f $KEY_NAME
+#ssh-keygen -t rsa -b 4096 -N betty -f school
 #Generate public key from the pk
-ssh-keygen -y -f school -p betty > $KEYNAME.pub
+#ssh-keygen -y -f school -p betty > school.pub
