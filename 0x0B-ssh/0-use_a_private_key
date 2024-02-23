@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#replace with the servers ip adress or the dormain name
+SERVER="e4b42c6b6257@e4b42c6b6257.83860286.alx-cod.online"
+#connect to the server usining the "ubuntu" user and the specified private key
+ssh -i ~/.ssh/school ubuntu@$SERVER
