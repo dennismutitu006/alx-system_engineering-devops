@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#declare name and passphrase
+KEY_NAME="school"
+PASSPHRASE="betty"
+
+#Generate the rsa key pair
+ssh-keygen -t rsa -b 4096 -C "$KEY_NAME" -N "$PASSPHRASE" -f ~/alx-system_engineering-devops/0x0B-ssh/$KEY_NAME
