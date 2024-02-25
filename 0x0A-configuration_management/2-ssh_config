@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Configuring my sshclient to use a private key and disable password authentic.
+
+Host my-server
+    Hostname 192.168.43.85
+    IdentityFile ~/.ssh/school
+    PubkeyAuthentication yes
+    PasswordAuthentication no
