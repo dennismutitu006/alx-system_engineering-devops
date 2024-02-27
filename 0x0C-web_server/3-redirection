@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Configures Nginx server so that "/redirect_me" is redirecting to another page
+# with code "301 Moved Permanently"
+
+sed -i '/location \/redirect_me {/a \ return 301 Moved Permanently;' /etc/nginx/sites-available/default
+
+sudo service nginx restart
