@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# A script that transfers a file from our client to a server
+
+# Check if the number of parameters is less than 3
+if [ $# -lt 3 ]; then
+  # Display usage message
+  echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+  exit 1
+fi
+
+# Assign the parameters to variables
+PATH_TO_FILE=$1
+IP=$2
+USERNAME=$3
+PATH_TO_SSH_KEY=$4
+
+# If the path to the SSH key is not provided, use the default one
+if [ -z "$PATH_TO_SSH_KEY" ]; then
+  PATH_TO_SSH_KEY=~/.ssh/id_rsa
+fi
+
+# Transfer the file using scp with strict host key checking disabled
+scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP:~/"
+
