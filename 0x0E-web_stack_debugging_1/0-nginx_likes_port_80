@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #I want to use my debugging skillsto find out what is keeping my ubuntu 
 #container nginx from listening to port 80
-rm /etc/nginx/sites-enabled
+rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enalbed/default
 service nginx restart
