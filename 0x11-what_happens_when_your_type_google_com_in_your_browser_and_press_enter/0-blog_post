@@ -1,0 +1,21 @@
+Wondering what happens when you search something on your browser?
+
+Behind the scenes, a number of actions take place when you type google.com into your browser and hit Enter. Let’s delve into each step of this intricate process:
+
+Requesting DNS (Domain Name System):Your computer initiates a DNS query to a DNS server. The purpose is to convert the human-readable domain name (e.g., www.google.com) into an IP address that the network can recognize.
+The DNS server searches its records and returns the corresponding IP address to your browser.
+TCP/IP (Transmission Control Protocol/Internet Protocol):Once your computer obtains the web server’s IP address, it establishes a connection using the TCP/IP protocol.
+TCP divides data into packets and ensures their reliable delivery, while the IP protocol routes these packets to the correct destination.
+Firewall:Before the connection is fully established, your computer’s firewall scrutinizes the packets to ensure they are not malicious.
+A firewall acts as a security device, monitoring and regulating incoming and outgoing network traffic based on predefined rules.
+HTTPS/SSL (Hypertext Transfer Protocol Secure/Secure Sockets Layer):Upon successful connection, an HTTPS session begins. This secure version of HTTP encrypts data exchanged between your computer and the web server.
+SSL or TLS protocols ensure that the data remains confidential during transmission, preventing interception by third parties.
+Load-balancer:The request is then sent to a load balancer, which distributes incoming network traffic across multiple web servers.
+Load balancers help balance the load on each server, preventing any single server from being overwhelmed.
+Web Server:One of the web servers receives the HTTPS request from the load balancer.
+The web server processes the request, locating the necessary resource or web page, and sends the response back to your computer.
+Application Server:In some cases, the web server may lack the required information to fulfill the request.
+It then forwards the request to an application server, which handles more complex tasks or retrieves data from databases.
+Database:If needed, the application server interacts with a database to retrieve specific data.
+The requested data is then incorporated into the web server’s response and sent back to your browser.
+In conclusion, typing google.com into your browser sets in motion a series of intricate processes involving DNS requests, TCP/IP communication, firewalls, HTTPS/SSL encryption, load balancers, web servers, application servers and databases.
