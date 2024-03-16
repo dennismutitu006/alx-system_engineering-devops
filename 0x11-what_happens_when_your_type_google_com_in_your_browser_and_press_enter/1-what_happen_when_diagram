@@ -1,0 +1,28 @@
+  +---------------------+   +------------------+   +-------------------+
+  |      DNS Server     |   |     Firewall     |   |    Load Balancer  |
+  |                     |   |                  |   |                   |
+  |   Resolves Domain   |   |                  |   |                   |
+  |     Name to IP      |   |                  |   |                   |
+  +---------------------+   +------------------+   +-------------------+
+               |                   |                        |
+               |                   |                        |
+               |                   |                        |
+               v                   v                        v
+         +--------------+    +-----------+           +-------------+
+         |    Browser   |    |  Web Server|           | Application |
+         |              |    |            |           |   Server    |
+         | Initiates    |    | Receives  |           | Generates   |
+         |   Request    |    |   Request |           |   Web Page  |
+         +--------------+    +-----------+           +-------------+
+                                 |                        |
+                                 |                        |
+                                 |                        |
+                                 v                        v
+                            +-------------+         +----------------+
+                            |  Database   |         | Database Server|
+                            |             |         |                |
+                            |   Retrieves |         |   Processes    |
+                            |   Data      |         |   Data         |
+                            +-------------+         +----------------+
+
+
