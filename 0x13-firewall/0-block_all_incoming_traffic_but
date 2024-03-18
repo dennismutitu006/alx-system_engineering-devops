@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#this script install a firewall and configures it to accept only
+#port 22/ssh port 80/http 443/https
+sudo apt install ufw
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
