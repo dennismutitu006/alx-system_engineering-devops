@@ -1,28 +1,7 @@
 #!/usr/bin/env bash
-
-# Install Nginx (if not already installed)
-apt-get update
-apt-get install -y nginx
-
-# Create an nginx user (if not already exists)
-useradd -m -s /bin/bash nginx
-
-# Change ownership of Nginx directories to the nginx user
-chown -R nginx:nginx /etc/nginx /var/log/nginx /var/lib/nginx
-
-# Update Nginx configuration to run as nginx user
-sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
-
-# Configure Nginx to listen on all active IPs on port 8080
-echo "server {
-    listen 8080 default_server;
-    listen [::]:8080 default_server;
-    # Add your server block configuration here
-}" > /etc/nginx/sites-available/default
-
-# Reload Nginx to apply changes
-systemctl reload nginx
-
-# Print a message indicating successful configuration
-echo "Nginx is now running as the nginx user and listening on port 8080."
-
+# This is a script that will fix container:: task 2
+pkill -f apache2
+chmod 644 /etc/nginx/nginx.conf
+sed -i "1i user nginx;" /etc/nginx/nginx.conf
+sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
+sudo -u nginx service nginx restart
