@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""a module for function to return number of subreddit subscribers """
+""" module for function to return number of subreddit subscribers """
 import requests
 import sys
 
@@ -7,7 +7,7 @@ import sys
 def number_of_subscribers(subreddit):
     """  Args:subreddit: subreddit name
     Returns:
-        the number of subscribers to the subreddit,
+        number of subscribers to the subreddit,
         or 0 if subreddit requested is invalid"""
     headers = {'User-Agent': 'xica369'}
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
